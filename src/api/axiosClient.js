@@ -2,18 +2,15 @@ import axios from 'axios';
 import queryString from 'query-string';
 import LocalStorageService from '../config/LocalStorageService/LocalStorageService';
 import userApi from './userApi'
-// let user = JSON.parse(localStorage.getItem('user'));
-// console.log("user11: ", user)
 const axiosClient = axios.create({
-    // baseURL: 'https://ptwncinternetbanking.herokuapp.com',
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://ptwncinternetbanking.herokuapp.com',
+    // baseURL: 'http://localhost:3000',
     headers: {
         'content-type': 'application/json',
-        // 'x-access-token':user !==null ? user.accessToken : '' 
     },
     paramsSerializer: params => queryString.stringify(params),
 });
-// axiosClient.defaults.headers.common['x-access-token'] = user !== null ? user.accessToken : '';
+
 axiosClient.interceptors.request.use(async (config) => {
     // Handle token here ...
 
