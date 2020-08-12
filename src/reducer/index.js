@@ -10,6 +10,7 @@ import listTransaction from './customer/listTransaction'
 import eelistAccount from './emloyee/listAccount'
 import eelistTransaction from './emloyee/listTransaction'
 import adlistTransaction from './admin/listTransaction'
+import adlistAccount from './admin/listAccount'
 import dataStatis from './admin/dataStatis'
 const rootReducer= combineReducers({
     user,
@@ -23,7 +24,8 @@ const rootReducer= combineReducers({
     eelistAccount,
     eelistTransaction,
     adlistTransaction,
-    dataStatis
+    dataStatis,
+    adlistAccount
 
 });
 

@@ -17,10 +17,11 @@ import eeAccount from '../container/employee/Account'
 import eeMoney from '../container/employee/Money'
 import eeSignup from '../container/employee/Signup'
 import eeTransaction from '../container/employee/Transaction'
+
 import adStatistics from '../container/admin/Statistical'
 import adTransaction from '../container/admin/Transaction'
 import adSignup from '../container/admin/Signup'
-
+import adAccount from '../container/admin/Account'
 import NotFound from '../container/NotFound'
 import PrivateRoute from '../compoment/PrivateRoute';
 import PublicRoute from '../compoment/PublicRoute';
@@ -137,6 +138,13 @@ function Routers(props) {
           component={adSignup}
           path='/adSignup'
           exact />
+
+        <PrivateRoute
+          isLogin={user.accesstoken !== "" && user.Permission === 3 ? true : false}
+          component={adAccount}
+          path='/adAccount'
+          exact />
+          
 
         <PublicRoute
           restricted={false}

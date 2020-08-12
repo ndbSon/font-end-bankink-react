@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import { FormControl } from '@material-ui/core';
+import { FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import { FormHelperText } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import { withFormik, Form, Field, useField } from 'formik'
@@ -39,7 +39,7 @@ function Fromaddmemorize(props) {
     const classes = useStyles();
     const [namefrom, setnamefrom] = useState(true);
     const typingtime = useRef(null)
-    var { errors, touched, values, getName } = props;
+    var { errors, touched, values, getName,handleChange } = props;
     const [field, meta, helpers] = useField("Name");
     const { value } = meta;
     const { setValue } = helpers;
@@ -74,10 +74,6 @@ function Fromaddmemorize(props) {
     }
     return (
         <Container component="main" maxWidth="sm">
-            <CssBaseline />
-            <Typography component="h1" variant="h5">
-                Transfer
-            </Typography>
             <Form >
                 <FormControl fullWidth error={!!errors.FromAccount} >
                     <Field
@@ -163,7 +159,18 @@ function Fromaddmemorize(props) {
                         )} />
                     {touched.Content && <FormHelperText>{errors.Content}</FormHelperText>}
                 </FormControl>
-      
+                <FormControl variant="outlined" fullWidth>
+                    <InputLabel >Charge</InputLabel>
+                    <Select
+                       name='Charge'
+                        label="Charge"
+                        value={values.Charge}
+                        onChange={handleChange}
+                    >
+                        <MenuItem value={true}>Nguời Chuyển Trả Phí</MenuItem>
+                        <MenuItem value={false}>Người Nhận Trả Phí</MenuItem>
+                    </Select>
+                </FormControl>
                 <Button
                     type="submit"
                     fullWidth
@@ -188,6 +195,7 @@ const FormikForm = withFormik({
             Content: '',
             OTP: '',
             Amount: '',
+            Charge: true
         }
         return {
             ...result

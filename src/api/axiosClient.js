@@ -3,8 +3,8 @@ import queryString from 'query-string';
 import LocalStorageService from '../config/LocalStorageService/LocalStorageService';
 import userApi from './userApi'
 const axiosClient = axios.create({
-    baseURL: 'https://ptwncinternetbanking.herokuapp.com',
-    // baseURL: 'http://localhost:3000',
+    // baseURL: 'https://ptwncinternetbanking.herokuapp.com',
+    baseURL: 'http://localhost:3000',
     headers: {
         'content-type': 'application/json',
     },

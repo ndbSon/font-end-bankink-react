@@ -94,7 +94,7 @@ export const eelistItem = (
         <ListItemIcon>
           <DashboardIcon />
         </ListItemIcon>
-        <ListItemText primary="Dashboard" />
+        <ListItemText primary="Account" />
       </ListItem>
 
       <ListItem button component={NavLink} to="/eeSignup">
@@ -128,6 +128,13 @@ export const adlistItem = (
           <AddBoxIcon />
         </ListItemIcon>
         <ListItemText primary="Signup" />
+      </ListItem>
+
+      <ListItem button component={NavLink} to="/adAccount">
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Account" />
       </ListItem>
   </div>
 );

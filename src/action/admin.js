@@ -1,9 +1,9 @@
-// export const LISACCOUNT = (list) => {
-//     return {
-//         type: 'LISACCOUNT',
-//         payload:list
-//     }
-// }
+export const LISTACCOUNT = (list) => {
+    return {
+        type: 'adLISTACCOUNT',
+        payload:list
+    }
+}
 export const adTRANSACTION = (list) => {
     return {
         type: 'adTRANSACTION',
@@ -16,4 +16,23 @@ export const adSTATIS = (list) => {
         payload:list
     }
 }
+export const SEARCH = (item) => {
+    return {
+        type: 'adSEARCH',
+        payload:item
+    }
+}
+export const LOCKACCOUNT = (item) => {
+    return {
+        type: 'LOCKACCOUNT',
+        payload:item
+    }
+}
+export const UNLOCKACCOUNT = (item) => {
+    return {
+        type: 'UNLOCKACCOUNT',
+        payload:item
+    }
+}
+
 

@@ -164,8 +164,8 @@ function Fromaddmemorize(props) {
                         value={values.Charge}
                         onChange={handleChange}
                     >
-                        <MenuItem value={0}>Nguời Chuyển Trả Phí</MenuItem>
-                        <MenuItem value={1}>Người Nhận Trả Phí</MenuItem>
+                        <MenuItem value={true}>Nguời Chuyển Trả Phí</MenuItem>
+                        <MenuItem value={false}>Người Nhận Trả Phí</MenuItem>
                     </Select>
                 </FormControl>
                 <Button
@@ -192,7 +192,7 @@ const FormikForm = withFormik({
             Content: '',
             OTP: '',
             Amount: '',
-            Charge: 0
+            Charge: true
         }
         return {
             ...result
